@@ -45,12 +45,6 @@ const StyledButton = styled.div`
   cursor: pointer;
   ${buttonBackground};
   ${buttonColor};
-  ${css`
-    ${({ text, primary, ...rest }) => {
-      console.log(rest);
-      return { rest };
-    }}
-  `}
 `;
 
 // #55a532"
