@@ -7,7 +7,11 @@ const buttonBackground = css`
     const selected_color = primary ? "#55a532" : "#eee";
     return css`
       background: ${selected_color}
-        linear-gradient(${selected_color}, ${lighten(0.1, selected_color)});
+        linear-gradient(
+          to bottom,
+          ${lighten(0.1, selected_color)},
+          ${selected_color}
+        );
       &:hover {
         background: ${darken(0.1, selected_color)};
       }
@@ -41,11 +45,21 @@ const StyledButton = styled.div`
   cursor: pointer;
   ${buttonBackground};
   ${buttonColor};
+  ${css`
+    ${({ text, primary, ...rest }) => {
+      console.log(rest);
+      return { rest };
+    }}
+  `}
 `;
 
 // #55a532"
-function Button({ text, primary = false }) {
-  return <StyledButton primary={primary}>{text}</StyledButton>;
+function Button({ className, text, primary = false }) {
+  return (
+    <StyledButton type="submit" className={className} primary={primary}>
+      {text}
+    </StyledButton>
+  );
 }
 
 export default Button;

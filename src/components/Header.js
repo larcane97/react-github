@@ -13,9 +13,7 @@ const StyledHeader = styled.header`
 `;
 
 const StyledHeaderInner = styled.div`
-  max-width: 980px;
   height: 78px;
-  margin: 0 auto;
 `;
 
 const StyledLeftHeader = styled.div`
@@ -128,7 +126,7 @@ function RightHeader() {
           <Button text="Sign In" />
         </Link>
         <Link to="sign-up">
-          <Button text="Sign up" primary />
+          <Button text="Sign up" primary fontsize="15px" />
         </Link>
       </div>
       <form id="search-form" method="POST" action="">
@@ -150,17 +148,13 @@ function RightHeader() {
   );
 }
 
-function HeaderInner({ children }) {
-  return <StyledHeaderInner className="clearfix">{children}</StyledHeaderInner>;
-}
-
 function Header() {
   return (
     <StyledHeader className="section">
-      <HeaderInner>
+      <StyledHeaderInner className="inner clearfix">
         <LeftHeader />
         <RightHeader />
-      </HeaderInner>
+      </StyledHeaderInner>
     </StyledHeader>
   );
 }

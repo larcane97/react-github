@@ -22,3 +22,10 @@ a {
 .float--right {
   float: right;
 }
+
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
